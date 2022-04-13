@@ -160,11 +160,53 @@ console.log(`These are the Italian dishes which serve five people: `, italianAnd
 //3. Create a function that will return only dishes whose serving id number matches their serving count.
 //Filter
 
+function problemThree(){
+    let results = dishes.filter(function(el){
+        if (el.id === el.servings){
+            return true;
+        }
+        else{
+            return false;
+        }});
+    return results;
+}
+
+let servingAndIdMatch = problemThree();
+console.log('Those dishes which match serving size and id are: ', servingAndIdMatch);
+
 //4. Create a function that will return only dishes whose serving count is even.
 //Filter
 
+function problemFour(){
+    let results = dishes.filter(function(el){
+        if(el.servings % 2 === 0){
+            return true;
+        }
+        else{
+            return false;
+        }});
+    return results;
+}
+
+let evenServingCounts = problemFour();
+console.log('The dishes with even serving count are: ', evenServingCounts);
+
 //5. Create a function that will return dishes whose ingredients array is "tomato" and "cheese".
 //Filter
+
+function problemFive(){
+    let results = dishes.filter(function(el){
+        if(el.ingredients.includes("tomato") && (el.ingredients.includes("cheese"))){
+            return true;
+        }
+        else{
+            return false;
+        }});
+    return results;
+}
+
+let tomatoAndCheeseIngredients = problemFive();
+console.log("The items with tomato and cheese are: ", tomatoAndCheeseIngredients);
 
 //6a. Create a function that will return an array of only the names of the cuisine types. Ie ['Italian', 'Mexican', ...]
 //Map
